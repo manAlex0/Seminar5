@@ -58,6 +58,23 @@
 // Теорема о неравенстве треугольника: каждая сторона треугольника меньше суммы двух других сторон.
 
 
+void Calculation (int ab, int bc, int ca)
+{
+        if(ab < bc + ca && bc < ca + ab && ca < ab + bc)
+        System.Console.WriteLine("Такой треугольник существует");
+        else System.Console.WriteLine("Такого треугольника не существует");
+}
+
+
+System.Console.WriteLine("Введите сторону AB: ");
+int ab = Convert.ToInt32(Console.ReadLine());
+System.Console.WriteLine("Введите сторону BC: ");
+int bc = Convert.ToInt32(Console.ReadLine());
+System.Console.WriteLine("Введите сторону CA: ");
+int ca = Convert.ToInt32(Console.ReadLine());
+
+Calculation (ab, bc, ca);
+
 
 
 //***************************************************************************
@@ -68,47 +85,47 @@
 // 3 -> 11
 // 2 -> 10
 
-int LengthArray(int num)
-{
-    int result = 0;
-    while (num > 0)
-    {
-        result += 1;
-        num /= 2;
-    }
-    return result;
-}
+// int LengthArray(int num)
+// {
+//     int result = 0;
+//     while (num > 0)
+//     {
+//         result += 1;
+//         num /= 2;
+//     }
+//     return result;
+// }
 
-void FillArray(int[] array, int num)
-{
-    int result = 0;
-    for (var i = 0; i < array.Length; i++)
-    {
-        if (num % 2 == 0)
-        result = 0;
-        else result = 1;
-        array[i] = result;
-        num /=2;
-    }
-    Array.Reverse(array);
-}
+// void FillArray(int[] array, int num)
+// {
+//     int result = 0;
+//     for (var i = 0; i < array.Length; i++)
+//     {
+//         if (num % 2 == 0)
+//             result = 0;
+//         else result = 1;
+//         array[i] = result;
+//         num /= 2;
+//     }
+//     Array.Reverse(array);
+// }
 
-void PrintArray (int[] array)
-{
-    foreach (var item in array)
-    {
-        System.Console.Write(item);
-    }
-}
+// void PrintArray(int[] array)
+// {
+//     foreach (var item in array)
+//     {
+//         System.Console.Write(item);
+//     }
+// }
 
 
 
-System.Console.WriteLine("Введите число:");
-int num = int.Parse(Console.ReadLine()!);
-int lengthArray = LengthArray(num);
-int[] array = new int[lengthArray];
-FillArray(array, num);
+// System.Console.WriteLine("Введите число:");
+// int num = int.Parse(Console.ReadLine()!);
+// int lengthArray = LengthArray(num);
+// int[] array = new int[lengthArray];
+// FillArray(array, num);
 
-System.Console.Write($"Ваше десятичное число {num} преобразованно в двоичное число: ");
-PrintArray(array);
+// System.Console.Write($"Ваше десятичное число {num} преобразованно в двоичное число: ");
+// PrintArray(array);
 
