@@ -188,43 +188,45 @@
 // 0, 7, 8, -2, -2 -> 2
 // 1, -7, 567, 89, 223 -> 3
 
-void FillArray(int[] array)
-{
-    for (int i = 0; i < array.Length; i++)
-    {
-        System.Console.WriteLine("Введите число: ");
-        array[i] = int.Parse(Console.ReadLine()!);
-    }
-}
+// void FillArray(int[] array)
+// {
+//     for (int i = 0; i < array.Length; i++)
+//     {
+//         System.Console.WriteLine("Введите число: ");
+//         array[i] = int.Parse(Console.ReadLine()!);
+//     }
+// }
 
-void PrintArray(int[] array)
-{
-    foreach (var item in array)
-    {
-        System.Console.Write($"{item} ");
-    }
-}
+// void PrintArray(int[] array)
+// {
+//     foreach (var item in array)
+//     {
+//         System.Console.Write($"{item} ");
+//     }
+// }
 
-int ArrayResult(int[] array)
-{
-    int result = 0;
-    for (var i = 0; i < array.Length; i++)
-    {
-        if (array[i] > 0)
-        result += 1;
-    }
-    return result;
-}
+// int ArrayResult(int[] array)
+// {
+//     int result = 0;
+//     for (var i = 0; i < array.Length; i++)
+//     {
+//         if (array[i] > 0)
+//         result += 1;
+//     }
+//     return result;
+// }
 
 
 
-Console.Clear();
-System.Console.WriteLine("Введите количество чисел: ");
-int[] array = new int[int.Parse(Console.ReadLine()!)];
-FillArray(array);
-PrintArray(array);
-System.Console.WriteLine();
-System.Console.WriteLine($"В Вашем массиве числа > 0 найдено: {ArrayResult(array)}");
+// Console.Clear();
+// System.Console.WriteLine("Введите количество чисел: ");
+// int[] array = new int[int.Parse(Console.ReadLine()!)];
+// FillArray(array);
+// PrintArray(array);
+// System.Console.WriteLine();
+// System.Console.WriteLine($"В Вашем массиве числа > 0 найдено: {ArrayResult(array)}");
+
+
 
 
 
@@ -234,6 +236,27 @@ System.Console.WriteLine($"В Вашем массиве числа > 0 найд�
 // заданных уравнениями y = k1 * x + b1, y = k2 * x + b2; значения b1, k1, b2 и k2 задаются пользователем.
 // Пример:
 // b1 = 2, k1 = 5, b2 = 4, k2 = 9 -> (-0,5; -0,5)
+
+void ResultFormul(double b1, double b2, double k1, double k2)
+{
+    double resultX = 0;
+    double resultY = 0;
+    resultX = -((b1 - b2) / (k1 - k2));
+    resultY = k2 * resultX + b2;
+    System.Console.WriteLine($"{resultX}, {resultY}");
+}
+
+
+System.Console.WriteLine("Введите b1: ");
+double b1 = int.Parse(Console.ReadLine()!);
+System.Console.WriteLine("Введите b2: ");
+double b2 = int.Parse(Console.ReadLine()!);
+System.Console.WriteLine("Введите k1: ");
+double k1 = int.Parse(Console.ReadLine()!);
+System.Console.WriteLine("Введите k2: ");
+double k2 = int.Parse(Console.ReadLine()!);
+
+ResultFormul(b1, b2, k1, k2);
 
 
 
