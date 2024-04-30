@@ -237,26 +237,26 @@
 // Пример:
 // b1 = 2, k1 = 5, b2 = 4, k2 = 9 -> (-0,5; -0,5)
 
-void ResultFormul(double b1, double b2, double k1, double k2)
-{
-    double resultX = 0;
-    double resultY = 0;
-    resultX = -((b1 - b2) / (k1 - k2));
-    resultY = k2 * resultX + b2;
-    System.Console.WriteLine($"{resultX}, {resultY}");
-}
+// void ResultFormul(double b1, double b2, double k1, double k2)
+// {
+//     double resultX = 0;
+//     double resultY = 0;
+//     resultX = -((b1 - b2) / (k1 - k2));
+//     resultY = k2 * resultX + b2;
+//     System.Console.WriteLine($"{resultX}, {resultY}");
+// }
 
 
-System.Console.WriteLine("Введите b1: ");
-double b1 = int.Parse(Console.ReadLine()!);
-System.Console.WriteLine("Введите b2: ");
-double b2 = int.Parse(Console.ReadLine()!);
-System.Console.WriteLine("Введите k1: ");
-double k1 = int.Parse(Console.ReadLine()!);
-System.Console.WriteLine("Введите k2: ");
-double k2 = int.Parse(Console.ReadLine()!);
+// System.Console.WriteLine("Введите b1: ");
+// double b1 = int.Parse(Console.ReadLine()!);
+// System.Console.WriteLine("Введите b2: ");
+// double b2 = int.Parse(Console.ReadLine()!);
+// System.Console.WriteLine("Введите k1: ");
+// double k1 = int.Parse(Console.ReadLine()!);
+// System.Console.WriteLine("Введите k2: ");
+// double k2 = int.Parse(Console.ReadLine()!);
 
-ResultFormul(b1, b2, k1, k2);
+// ResultFormul(b1, b2, k1, k2);
 
 
 
@@ -269,6 +269,38 @@ ResultFormul(b1, b2, k1, k2);
 // Задача НЕГАФИБОНАЧЧИ необязательная. Задайте число. Составьте массив чисел НегаФибоначчи, в том числе для отрицательных индексов.
 // Пример:
 // для k = 9 массив будет выглядеть так: [-21 ,13, -8, 5, −3, 2, −1, 1, 0, 1, 1, 2, 3, 5, 8, 13, 21]
+
+void FillArray(int[] array)
+{
+    int averageLength = array.Length / 2 + 2;
+    array[array.Length / 2] = 0;
+    array[array.Length / 2 + 1] = 1;
+    for (int i = averageLength; i < array.Length; i++)
+    {
+        array[i] = array[i - 2] + array[i - 1];
+    }
+    for (int i = array.Length / 2 - 1; i >= 0; i--)
+    {
+        array[i] = array[i + 2] - array[i + 1];
+    }
+}
+
+void PrintArray(int[] array)
+{
+    foreach (int item in array)
+    {
+        System.Console.Write($"{item} ");
+    }
+}
+
+
+
+System.Console.WriteLine("Введите промежуток чисел Негафибоначчи: ");
+int num = int.Parse(Console.ReadLine()!);
+int[] array = new int[num + num - 1];
+FillArray(array);
+PrintArray(array);
+
 
 
 
